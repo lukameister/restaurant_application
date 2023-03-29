@@ -5,6 +5,9 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\Admin\ReservationController;
 use App\Http\Controllers\Admin\TableController;
+use App\Http\Controllers\Frontend\FCategoryController;
+use App\Http\Controllers\Frontend\FMenuController;
+use App\Http\Controllers\Frontend\FReservationController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -22,6 +25,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/categories', [FCategoryController::class, 'index'])->name('categories.index');
+Route::get('/categories/{category}', [FCategoryController::class, 'show'])->name('categories.show');
+Route::get('/menus', [FMenuController::class, 'index'])->name('menus.index');
+Route::get('/reservations/step-one', [FReservationController::class, 'stepOne'])->name('reservations.step.one');
+Route::get('/reservations/step-two', [FReservationController::class, 'stepTwo'])->name('reservations.step.two');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
