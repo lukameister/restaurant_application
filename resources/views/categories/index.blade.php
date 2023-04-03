@@ -16,12 +16,15 @@
                      <div class="container-fluid p-0">
                          <div class="row g-0">
                              @foreach($categories as $category)
-                                 <div class="col-lg-4 col-sm-6">
-                                     <a class="portfolio-box" href="assets/img/portfolio/fullsize/1.jpg" title="Project Name">
+                                 <div class="col-lg-4 col-sm-6 no-underline">
+                                     <a class="portfolio-box" href="{{ Storage::url($category->image) }}" title="{{ $category->name }}">
                                          <img class="img-fluid" src="{{ Storage::url($category->image) }}" alt="Image" />
                                          <div class="portfolio-box-caption">
                                              <div class="project-category text-white-50">{{ $category->description }}</div>
-                                             <div class="project-name">{{ $category->name }}</div>
+                                                 <div class="project-name">{{ $category->name }}</div>
+                                         </div>
+                                         <div>
+                                             <a href="{{ route('categories.show', $category->id) }}">See more</a>
                                          </div>
                                      </a>
                                  </div>
