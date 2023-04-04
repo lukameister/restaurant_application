@@ -11437,7 +11437,6 @@ header.menu h1, header.menu .h1 {
     header.menu {
         height: 100vh;
         min-height: 40rem;
-        padding-top: 4.5rem;
         padding-bottom: 0;
     }
     header.menu p {
