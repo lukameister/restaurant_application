@@ -1,7 +1,7 @@
 @extends('layouts.guest')
 
 @section('content')
-    <header class="restaurant">
+    <header class="reservation">
         <div class="container px-4 px-lg-5 h-100">
             <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-white text-center">
 
@@ -10,18 +10,12 @@
                         <div class="flex flex-col md:flex-row">
                             <div class="flex items-center justify-center p-6 sm:p-12 md:w-1/2">
                                 <div class="w-full">
-                                    <h3 class="mb-4 text-xl font-bold text-blue-600">Make Reservation</h3>
-
-                                    <div class="w-full bg-gray-200 rounded-full">
-                                        <div
-                                            class="w-40 p-1 text-xs font-medium leading-none text-center text-blue-100 bg-blue-600 rounded-full">
-                                            Step1</div>
-                                    </div>
+                                    <h3 class="mb-4 text-xl font-bold text-blue-600">Napravite rezervaciju</h3>
 
                                     <form method="POST" action="{{ route('reservations.store.step.one') }}">
                                         @csrf
                                         <div class="sm:col-span-6">
-                                            <label for="first_name" class="block text-sm font-medium text-gray-700"> First Name
+                                            <label for="first_name" class="block text-sm font-medium text-gray-700"> Ime
                                             </label>
                                             <div class="mt-1">
                                                 <input type="text" id="first_name" name="first_name"
@@ -33,7 +27,7 @@
                                             @enderror
                                         </div>
                                         <div class="sm:col-span-6">
-                                            <label for="last_name" class="block text-sm font-medium text-gray-700"> Last Name
+                                            <label for="last_name" class="block text-sm font-medium text-gray-700"> Prezime
                                             </label>
                                             <div class="mt-1">
                                                 <input type="text" id="last_name" name="last_name"
@@ -56,8 +50,7 @@
                                             @enderror
                                         </div>
                                         <div class="sm:col-span-6">
-                                            <label for="phone_number" class="block text-sm font-medium text-gray-700"> Phone
-                                                number
+                                            <label for="phone_number" class="block text-sm font-medium text-gray-700"> Broj Telefona
                                             </label>
                                             <div class="mt-1">
                                                 <input type="text" id="phone_number" name="phone_number"
@@ -69,8 +62,7 @@
                                             @enderror
                                         </div>
                                         <div class="sm:col-span-6">
-                                            <label for="reservation_date" class="block text-sm font-medium text-gray-700"> Reservation
-                                                Date
+                                            <label for="reservation_date" class="block text-sm font-medium text-gray-700"> Datum rezervacije
                                             </label>
                                             <div class="mt-1">
                                                 <input type="datetime-local" id="reservation_date" name="reservation_date"
@@ -79,14 +71,13 @@
                                                        value="{{ $reservation ? (\Carbon\Carbon::Parse($reservation->reservation_date))->format('Y-m-d\TH:i:s') : '' }}"
                                                        class="block w-full appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5" />
                                             </div>
-                                            <span class="text-xs">Please choose the time between 17:00-23:00.</span>
+                                            <span class="text-xs">Molimo Vas izaberite vreme između 15:00 i 22:00.</span>
                                             @error('res_date')
                                             <div class="text-sm text-red-400 mb-3">{{ $message }}</div>
                                             @enderror
                                         </div>
                                         <div class="sm:col-span-6">
-                                            <label for="guest_number" class="block text-sm font-medium text-gray-700"> Guest
-                                                Number
+                                            <label for="guest_number" class="block text-sm font-medium text-gray-700"> Broj gostiju
                                             </label>
                                             <div class="mt-1">
                                                 <input type="number" id="guest_number" name="guest_number"
@@ -99,7 +90,7 @@
                                         </div>
                                         <div class="mt-6 p-4 flex justify-end">
                                             <button type="submit"
-                                                    class="px-4 py-2 hover:bg-indigo-700 rounded-lg text-black">Next</button>
+                                                    class="px-4 py-2 hover:bg-indigo-700 rounded-lg text-black">Dalje</button>
                                         </div>
                                     </form>
                                 </div>

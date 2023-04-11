@@ -22,6 +22,10 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+Route::get('/', function(){
+    return view('welcome');
+});
 Route::get('/categories', [FCategoryController::class, 'index'])->name('categories.index');
 Route::get('/categories/{category}', [FCategoryController::class, 'show'])->name('categories.show');
 Route::get('/menus', [FMenuController::class, 'index'])->name('menus.index');

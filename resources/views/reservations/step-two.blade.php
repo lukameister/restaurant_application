@@ -1,7 +1,7 @@
 @extends('layouts.guest')
 
 @section('content')
-    <header class="restaurant">
+    <header class="reservation">
         <div class="container px-4 px-lg-5 h-100">
             <div class="flex items-center min-h-screen">
                 <div class="flex-1 h-full items-center max-w-4xl mx-auto rounded-lg shadow-xl">

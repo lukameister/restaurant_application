@@ -22,14 +22,14 @@
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
     <div class="container px-4 px-lg-5">
-        <a class="navbar-brand" href="/">Hill of Memories</a>
+        <a class="navbar-brand" href="/">Brdo Uspomena</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ms-auto my-2 my-lg-0">
-                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ route('menus.index') }}">Menu</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ route('categories.index') }}">Categories</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ route('reservations.step.one') }}">Reservation</a></li>
+                <li class="nav-item"><a class="nav-link" href="/">Početna</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('menus.index') }}">Meni</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('categories.index') }}">Kategorije</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('reservations.step.one') }}">Napravi rezervaciju</a></li>
             </ul>
 
         </div>
@@ -39,7 +39,7 @@
 
 <!-- Footer-->
 <footer class="bg-gray-200 py-5 ">
-    <div class="container px-4 px-lg-5"><div class="small text-center text-muted">Copyright &copy; 2022 - Hill of Memories</div></div>
+    <div class="container px-4 px-lg-5"><div class="small text-center text-muted">Copyright &copy; 2023 - Brdo Uspomena</div></div>
 </footer>
 <!-- Bootstrap core JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
