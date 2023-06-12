@@ -37,7 +37,7 @@ class TableController extends Controller
             'status' => $request->status,
             'location' => $request->location,
         ]);
-        return view('admin.tables.index')->with('success', 'Table created successfully.');
+        return to_route('admin.tables.index')->with('success', 'Table created successfully.');
 
     }
 

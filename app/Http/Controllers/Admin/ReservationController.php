@@ -33,12 +33,12 @@ class ReservationController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(ReservationStoreRequest $request)
+    public function store(ReservationStoreRequest $request, Table $table)
     {
-        $table = Table::findOrFail($request->table_id);
-        if($request->guest_number > $table->guest_number){
-            return back()->with('warning', 'Please choose the table based on guest number!');
-        }
+//        $table = Table::findOrFail($request->table_id);
+//        if($request->guest_number > $table->guest_number){
+//            return back()->with('warning', 'Table too small for amount of guests!');
+//        }
         $request_date = Carbon::parse($request->reservation_date);
         foreach ($table->reservations as $res) {
             if (Carbon::parse($res->reservation_date)->format('Y-m-d') == $request_date->format('Y-m-d')) {
