@@ -1,66 +1,60 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Restaurant Application
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+This is a restaurant application built using the Laravel framework. It allows users to view restaurant menus,
+categories, place orders, and make reservations.
 
-## About Laravel
+## Features
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- Admin panel: Administrator accounts have access to an admin panel where they can manage categories, menus, orders,
+  tables and reservations.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+    - In the categories tab admin is able to add a new category which opens the categories/create.blade page in which
+      they are
+      able to fill a form in which they can set the category's name and description and add a picture which will later
+      be
+      displayed for the user to see in the category page. After the category is added, admin will be returned to the
+      index
+      page and there will be a warning message displayed on top of the page "with success". Admin is afterwards able to
+      see
+      the edit and delete button. Edit button will redirect the admin to the form again. Delete button will completely
+      wipe
+      the category from the database.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+    - In the menus tab admin is able to add a new menu which opens the menus/create.blade page where admin is filling
+      out
+      a form where they add the menus name, image, price, description and choose which category the menus belongs to and
+      add
+      it to the database. After submitting the data, admin is returned to the index page and will see options to Edit or
+      Delete the menus.
 
-## Learning Laravel
+    - In the tables tab admin is able to add a new table which opens the tables/create.blade page with a form where
+      admin
+      is able to add the table name, guest number, status( Pending, Available, Not Available) and location( Front,
+      Inside, Outside ).
+      If the table is unavailable at the moment, the user will not be able to choose it from a dropdown menu when they
+      try to
+      make reservation. After adding a new table admin is returned to the index page and will see options to Edit or
+      Delete the table.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+    - In the reservations tab admin is able to add a new reservation which opens the reservations/create.blade page with
+      a form. In the form admin can add First name, Last name, Email, Phone number, reservation date, guest number and
+      choose the table for the guests. When choosing reservation date, admin can make reservation for the next 7 days
+      from 3pm to 10pm. If the incorrect time is chosen the form will return a error message. After the reservation is
+      stored, admin is returned to the index page where they will be able to edit or delete the reservation.<br>
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- Restaurant Categories: Guests can view the categories page, where the picture of category would be displayed and with a
+  hover over the picture the name and description of the category would be visible. There is a "See More" text below the
+  picture which redirects the user to the specific category page where they would be able to see the menus from the
+  chosen category.
+- Restaurant menus: Guests can view the menus, including dishes, prices, and descriptions.
+- Reservation system: Guests can enter the interactive Reservations page which is consisted out of two steps. In the 
+first step they will see a form to fill. Guest should enter First name, Last name, Email, Phone Number, Reservations 
+date with a message below "Please choose time between 3pm and 10pm." and to add number of guests. After clicking on 
+the button next, guest will see the step two which displays the tables available considering the date and number of 
+guests chosen in the last step. When clicking submit guest will be redirected to the thank you page which will let the
+guest know that the reservation has been stored.
+- Ordering system [WORK IN PROGRESS-NOT LIVE YET]:Users can add dishes to their cart, specify quantities, and place
+  orders.
 
-## Laravel Sponsors
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
